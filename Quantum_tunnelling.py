@@ -17,12 +17,12 @@ circuit.measure(0, 0)
 circuit.draw('mpl')
 plt.show()
 
-# Symulacja na lokalnym symulatorze Aer
+# Simulation on local Aer simulator
 simulator = qiskit.Aer.get_backend('qasm_simulator')
 result = qiskit.execute(circuit, simulator, shots=1000).result()
 counts = result.get_counts()
 
-# Wizualizacja wyników
+# Results visualization
 plt.bar(counts.keys(), counts.values())
 plt.xlabel('Stan końcowy')
 plt.ylabel('Liczba pomiarów')
